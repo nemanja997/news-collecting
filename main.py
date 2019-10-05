@@ -23,7 +23,6 @@ for url in articleURLs:
     articlePage = requests.get(url).content
     soupArticle = BeautifulSoup(articlePage, 'html.parser')
     title = soupArticle.find('h1', class_='article__title').get_text()
-    # subtitle = soupArticle.find('h2',class_='article__subtitle').get_text()
     author = soupArticle.find('div',class_='article__byline').find('a').get_text().strip()
     content = soupArticle.find('div',class_='article-content').get_text()
 
